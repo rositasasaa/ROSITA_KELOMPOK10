@@ -12,6 +12,26 @@ def hitung_rata_rata(nilai_list):
         return 0
     return sum(nilai_list) / len(nilai_list)
 
+# Method non-return type: Menampilkan data mahasiswa
+def tampilkan_data_mahasiswa(mahasiswa_list):
+    if not mahasiswa_list:
+        print("\nTidak ada data mahasiswa!")
+    else:
+        print("\n===== Data Mahasiswa =====")
+        for idx, mahasiswa in enumerate(mahasiswa_list, start=1):
+            print(f"{idx}. Nama: {mahasiswa['nama']}, Nilai: {mahasiswa['nilai']}, Rata-rata: {hitung_rata_rata(mahasiswa['nilai'])}")
+
+# Function return type: Mengecek status kelulusan berdasarkan rata-rata nilai
+def cek_kelulusan(rata_rata):
+    return "Lulus" if rata_rata >= 60 else "Tidak Lulus"
+
+# Program utama
+def main():
+    mahasiswa_list = []
+
+    while True:
+        tampilkan_menu()  
+
 # Menampilkan menu menggunakan method non-return type
         pilihan = input("Masukkan pilihan: ")
 
