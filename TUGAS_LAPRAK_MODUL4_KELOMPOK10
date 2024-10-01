@@ -1,0 +1,13 @@
+# Method non-return type: Menampilkan menu
+def tampilkan_menu():
+    print("\n===== MENU UTAMA =====")
+    print("1. Tambah Data Mahasiswa")
+    print("2. Tampilkan Data Mahasiswa")
+    print("3. Cek Status Kelulusan Mahasiswa")
+    print("4. Keluar")
+
+# Function return type: Menghitung rata-rata nilai
+def hitung_rata_rata(nilai_list):
+    if not nilai_list:
+        return 0
+    return sum(nilai_list) / len(nilai_list)
