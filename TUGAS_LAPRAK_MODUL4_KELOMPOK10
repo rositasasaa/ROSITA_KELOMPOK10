@@ -65,3 +65,28 @@ def main():
             tampilkan_data_mahasiswa(mahasiswa_list)  # Method non-return type
 
         elif pilihan == "3":
+
+# Cek kelulusan mahasiswa
+            tampilkan_data_mahasiswa(mahasiswa_list)
+            try:
+                nomor_mahasiswa = int(input("Pilih nomor mahasiswa untuk dicek status kelulusannya: "))
+                if 1 <= nomor_mahasiswa <= len(mahasiswa_list):
+                    mahasiswa = mahasiswa_list[nomor_mahasiswa - 1]
+                    rata_rata = hitung_rata_rata(mahasiswa['nilai'])  # Function return type
+                    status = cek_kelulusan(rata_rata)  # Function return type
+                    print(f"Mahasiswa {mahasiswa['nama']} dinyatakan: {status}")
+                else:
+                    print("Nomor mahasiswa tidak valid!")
+            except ValueError:
+                print("Input tidak valid, silakan masukkan angka.")
+
+        elif pilihan == "4":
+            print("Terima kasih telah menggunakan program!")
+            break
+
+        else:
+            print("Pilihan tidak valid! Silakan coba lagi.")
+
+# Memanggil fungsi utama
+if __name__ == "__main__":
+    main()
