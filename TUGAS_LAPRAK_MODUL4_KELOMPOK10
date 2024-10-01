@@ -11,3 +11,37 @@ def hitung_rata_rata(nilai_list):
     if not nilai_list:
         return 0
     return sum(nilai_list) / len(nilai_list)
+
+# Menampilkan menu menggunakan method non-return type
+        pilihan = input("Masukkan pilihan: ")
+
+        if pilihan == "1":
+            # Tambah data mahasiswa
+            nama = input("Masukkan nama mahasiswa: ")
+            nilai = []
+            while True:
+                try:
+                    jumlah_nilai = int(input(f"Berapa banyak nilai yang ingin dimasukkan untuk {nama}? "))
+                    if jumlah_nilai <= 0:
+                        print("Jumlah nilai harus lebih dari 0.")
+                        continue
+                    break
+                except ValueError:
+                    print("Input tidak valid, silakan masukkan angka.")
+
+            for i in range(jumlah_nilai):
+                while True:
+                    try:
+                        nilai.append(float(input(f"Masukkan nilai ke-{i + 1}: ")))
+                        break
+                    except ValueError:
+                        print("Input tidak valid, silakan masukkan angka.")
+
+            mahasiswa_list.append({"nama": nama, "nilai": nilai})
+            print(f"Data mahasiswa {nama} berhasil ditambahkan!")
+
+        elif pilihan == "2":
+            # Menampilkan data mahasiswa
+            tampilkan_data_mahasiswa(mahasiswa_list)  # Method non-return type
+
+        elif pilihan == "3":
